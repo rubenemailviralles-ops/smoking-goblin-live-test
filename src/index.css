@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300;1,400&family=JetBrains+Mono:wght@400;500&family=Permanent+Marker&family=Road+Rage&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Merriweather", Georgia, Cambria, "Times New Roman", Times, serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  --font-marker: "Permanent Marker", cursive, sans-serif;
+  --font-rage: "Road+Rage", "Road Rage", cursive, sans-serif;
+}
+
+/* Force dark theme root setup to eliminate mobile browser safe-area/overscroll white flashes */
+html,
+body,
+#root {
+  background-color: #0A0F0D !important;
+  color: #ECEFF1;
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  min-height: 100dvh;
+}
+
+@utility font-rage {
+  font-family: "Road Rage", "Road+Rage", cursive, sans-serif;
+}
+
+/* 
+  Graffiti-style text shadows that stay 100% readable.
+  Uses solid text colors with surrounding multi-directional shadows
+  instead of -webkit-text-stroke to prevent rendering errors where glyphs black out.
+*/
+.graffiti-text-glow {
+  color: #FFFDF0;
+  text-shadow:
+    -2px -2px 0px #040806,
+     2px -2px 0px #040806,
+    -2px  2px 0px #040806,
+     2px  2px 0px #040806,
+     3px  3px 0px #040806,
+     4px  4px 0px #06170e,
+     5px  5px 0px #06170e,
+     0px  0px 15px rgba(74, 222, 128, 0.5),
+     0px  0px 30px rgba(74, 222, 128, 0.25);
+}
+
+.graffiti-text-glow-sm {
+  color: #FFFDF0;
+  text-shadow:
+    -1px -1px 0px #020403,
+     1px -1px 0px #020403,
+    -1px  1px 0px #020403,
+     1px  1px 0px #020403,
+     2px  2px 0px #020403,
+     0px  0px 8px rgba(74, 222, 128, 0.4);
+}
+
+/* Custom scrollbar for category selector horizontal layout */
+.custom-category-scrollbar::-webkit-scrollbar {
+  height: 4px;
+}
+.custom-category-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.custom-category-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(74, 222, 128, 0.15);
+  border-radius: 9999px;
+}
+.custom-category-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(74, 222, 128, 0.45);
+}
+
+
